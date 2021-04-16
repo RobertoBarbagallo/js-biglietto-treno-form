@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #B91550;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+.container{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 15px;
+}
+
+.firstpart{
+    display: flex;
+    justify-content: space-around;
+}
+
+form{
+    width: 80%;
+}
+
+label{
+    display: block;
+    text-align: center;
+    color:  #B91550;
+    margin-bottom: 10px;
+    
+}
+input, select{
+    text-align: center;
+    border: 1px solid #B91550;
+    border-radius: 4px;
+}
+
+.inserimento1, .inserimento2, .inserimento3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.secondpart{
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    margin: 0 40px;
+    padding: 10px;
+    color:  #B91550;
+    border: 2px solid #B91550;
+    border-radius: 4px;
+}
+
+.container2{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-radius: 15px;
+}
+
+.wrapper{
+    width: 90%;
+    margin: auto;
+}
+
+.biglietto{
+    display: flex;
+}
+
+.biglietto div{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 200px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#nomedelpasseggero{
+    background-color: #808080;
+}
+
+.inoculated{
+    padding: 40px;
+}

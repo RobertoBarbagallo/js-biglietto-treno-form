@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Biglieto del treno</title>
+</head>
+
+<body>
+    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <div class="container">
+        <form id="myform">
+            <div class="firstpart">
+                <div class="inserimento1">
+                    <label for="nomecognome">Nome e Cognome</label>
+                    <input type="text" name="nomecognome" placeholder="Inserisci il nome e cognome">
+                </div>
+                <div class="inserimento2">
+                    <label for="distanzadapercorrere">Distanza da Percorrere</label>
+                    <input type="text" name="distanzadapercorrere" placeholder="Inserisci la distanza">
+                </div>
+               <div class="inserimento3">
+                <label for="eta">Seleziona la fascia di età</label>
+                <select name="eta" id="">
+                    <option value="adulto">Adulto</option>
+                    <option value="minorenne">Minorenne</option>
+                    <option value="anziano">Anziano</option>
+                </select>
+               </div>
+            </div>
+            
+          <div class="secondpart">
+            <button type="submit">Genera</button>
+            <button type="reset">Annulla</button>
+          </div>
+        
+        </form>
+
+    </div>
+
+
+    <h1>IL TUO BIGLIETTO</h1>
+    <div class="container2">
+
+        <div class="wrapper">
+            <h2>DETTAGLIO PASSEGGERI</h2>
+            <hr>
+            <div class="biglietto">
+                <div id="nomedelpasseggero">NOME PASSEGGERO</div>
+                <div id="offerta">OFFERTA</div>
+                <div id="carrozza">CARROZZA</div>
+                <div id="codiceCP">CODICE DEL TRENO</div>
+                <div id="prezzofinale">PREZZO</div>
+            </div>
+            <hr>
+        </div>
+
+    
+
+    </div>
+
+
+
+
+    <script src="myPlug.js"></script>
+</body>
+
+</html>
