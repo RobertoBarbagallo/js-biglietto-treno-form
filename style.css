@@ -6,6 +6,7 @@
 
 body{
     background-color: #B91550;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1{
@@ -66,6 +67,14 @@ button{
     color:  #B91550;
     border: 2px solid #B91550;
     border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+
+}
+
+button:hover{
+   
 }
 
 .container2{
@@ -101,4 +110,32 @@ button{
 
 .inoculated{
     padding: 40px;
+    text-transform: capitalize;
+}
+
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.1);
+    }
+
+    50%{
+
+        transform: scale(1.3);
+    }
+    
+
+    75%{
+        transform: scale(1.1);
+    }
+    
+
+    100%{
+        transform: scale(1);
+    }
+    
 }

@@ -7,7 +7,31 @@ window.addEventListener("load", function () {
 
 
 function formKeeper() {
-    var ilForm = document.getElementById("myform")
+    var ilForm = document.getElementById("myform");
+    var ilBottone = document.getElementById("genera")
+
+    ilBottone.addEventListener("mouseover", function (){
+        
+        ilBottone.style.animation ="pulse 500ms linear 1"
+
+    });
+
+    ilBottone.addEventListener("mouseleave", function(){
+        ilBottone.style.animation ="none"
+    })
+
+    var ilBottoneDue = document.getElementById("annulla")
+
+    ilBottoneDue.addEventListener("mouseover", function (){
+        
+        ilBottoneDue.style.animation ="pulse 500ms linear 1"
+
+    });
+
+    ilBottoneDue.addEventListener("mouseleave", function(){
+        ilBottoneDue.style.animation ="none"
+    })
+
 
     ilForm.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -27,7 +51,7 @@ function formKeeper() {
         console.log(nomeCompleto, distanza, tariffa);
         console.log(listaDati);
 
-        
+
         function carrozzaGenerator() {
             var numeroCarrozza = parseInt((Math.random() * 9) + 1);
             return numeroCarrozza
@@ -63,20 +87,20 @@ function formKeeper() {
         console.log(carrozzaGenerator());
         console.log(codiceCPGenerator());
 
-        function controlloNome(unNome){
+        function controlloNome(unNome) {
             var controllo = false
             var unNomeInNUmero = parseInt(unNome)
-            if(Number.isNaN(unNomeInNUmero)){
+            if (Number.isNaN(unNomeInNUmero)) {
                 controllo = true
                 return controllo
             }
         }
         var nomeControllato = controlloNome(nomeCompleto)
 
-        function controlloNumero (unNumero){
+        function controlloNumero(unNumero) {
             var controllo = false
             var unNumeroInNumero = parseInt(unNumero)
-            if (!Number.isNaN(unNumeroInNumero)){
+            if (!Number.isNaN(unNumeroInNumero)) {
                 controllo = true
                 return controllo
             }
@@ -92,22 +116,22 @@ function formKeeper() {
             return;
         }
 
-        if(nomeControllato && numeroControllato){
+        if (nomeControllato && numeroControllato) {
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
         }
 
     });
 
-    ilForm.addEventListener("reset", function() {
-       
+    ilForm.addEventListener("reset", function () {
+
         var targets = document.querySelectorAll(".inoculated")
-        
+
         for (var i = 0; i < targets.length; i++) {
             var target = targets[i];
 
             target.remove();
         }
-       
+
     });
 };
 
