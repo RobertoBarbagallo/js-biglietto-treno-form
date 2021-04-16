@@ -45,15 +45,16 @@ function formKeeper() {
             var tariffaBiglietto = (kilometriPercorsi * 0.21);
             var sconto20 = tariffaBiglietto * 20 / 100;
             var sconto40 = tariffaBiglietto * 40 / 100;
-            if (anni === "minorene") {
+            if (anni === "Minorenne") {
                 tariffaBiglietto = (tariffaBiglietto - sconto20).toFixed(2)
-            } else if (anni === "anziano") {
+            } else if (anni === "Anziano") {
                 tariffaBiglietto = (tariffaBiglietto - sconto40).toFixed(2)
             } else {
                 tariffaBiglietto
             }
             return tariffaBiglietto.toFixed(2);
         }
+
         var prezzoDelBiglietto = prezzoCalculator(distanza, tariffa);
 
         console.log(prezzoCalculator(distanza, tariffa));
@@ -71,7 +72,7 @@ function formKeeper() {
 
         controlloNome(nomeCompleto)
 
-        var nomeCOntrollato = controlloNome(nomeCompleto)
+        var nomeControllato = controlloNome(nomeCompleto)
 
 
         function controlloNumero (unNumero){
@@ -87,16 +88,16 @@ function formKeeper() {
 
         var numeroControllato =    controlloNumero(distanza)
 
-        function inoculate(name, offer, Wagon, code, price) {
+        function inoculate(name, offer, wagon, code, price) {
             document.getElementById("nomedelpasseggero").innerHTML += ("<span class='inoculated'>" + name + "</span>")
             document.getElementById("offerta").innerHTML += ("<span class='inoculated'>" + offer + "</span>")
-            document.getElementById("carrozza").innerHTML += ("<span class='inoculated'>" + Wagon + "</span>")
+            document.getElementById("carrozza").innerHTML += ("<span class='inoculated'>" + wagon + "</span>")
             document.getElementById("codiceCP").innerHTML += ("<span class='inoculated'>" + code + "</span>")
             document.getElementById("prezzofinale").innerHTML += ("<span class='inoculated'>" + price + "</span>")
             return;
         }
 
-        if(numeroControllato && numeroControllato){
+        if(nomeControllato && numeroControllato){
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
         }
       
