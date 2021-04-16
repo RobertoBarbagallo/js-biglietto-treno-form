@@ -18,6 +18,8 @@ function formKeeper() {
 
         var nomeCompleto = listaDati.nomecognome.value;
 
+        nomeCompleto = nomeCompleto.toLowerCase();
+
         var distanza = listaDati.distanzadapercorrere.value;
 
         var tariffa = listaDati.eta.value;
@@ -69,11 +71,7 @@ function formKeeper() {
                 return controllo
             }
         }
-
-        controlloNome(nomeCompleto)
-
         var nomeControllato = controlloNome(nomeCompleto)
-
 
         function controlloNumero (unNumero){
             var controllo = false
@@ -83,10 +81,7 @@ function formKeeper() {
                 return controllo
             }
         }
-
-        controlloNumero(distanza)
-
-        var numeroControllato =    controlloNumero(distanza)
+        var numeroControllato = controlloNumero(distanza)
 
         function inoculate(name, offer, wagon, code, price) {
             document.getElementById("nomedelpasseggero").innerHTML += ("<span class='inoculated'>" + name + "</span>")
@@ -100,7 +95,6 @@ function formKeeper() {
         if(nomeControllato && numeroControllato){
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
         }
-      
 
     });
 
