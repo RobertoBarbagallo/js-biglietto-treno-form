@@ -10,26 +10,26 @@ function formKeeper() {
     var ilForm = document.getElementById("myform");
     var ilBottone = document.getElementById("genera")
 
-    ilBottone.addEventListener("mouseover", function (){
-        
-        ilBottone.style.animation ="pulse 500ms linear 1"
+    ilBottone.addEventListener("mouseover", function () {
+
+        ilBottone.style.animation = "pulse 500ms linear 1"
 
     });
 
-    ilBottone.addEventListener("mouseleave", function(){
-        ilBottone.style.animation ="none"
+    ilBottone.addEventListener("mouseleave", function () {
+        ilBottone.style.animation = "none"
     })
 
     var ilBottoneDue = document.getElementById("annulla")
 
-    ilBottoneDue.addEventListener("mouseover", function (){
-        
-        ilBottoneDue.style.animation ="pulse 500ms linear 1"
+    ilBottoneDue.addEventListener("mouseover", function () {
+
+        ilBottoneDue.style.animation = "pulse 500ms linear 1"
 
     });
 
-    ilBottoneDue.addEventListener("mouseleave", function(){
-        ilBottoneDue.style.animation ="none"
+    ilBottoneDue.addEventListener("mouseleave", function () {
+        ilBottoneDue.style.animation = "none"
     })
 
 
@@ -71,14 +71,17 @@ function formKeeper() {
             var tariffaBiglietto = (kilometriPercorsi * 0.21);
             var sconto20 = tariffaBiglietto * 20 / 100;
             var sconto40 = tariffaBiglietto * 40 / 100;
-            if (anni === "Minorenne") {
+            if (anni === "minorenne") {
                 tariffaBiglietto = (tariffaBiglietto - sconto20).toFixed(2)
-            } else if (anni === "Anziano") {
+                return tariffaBiglietto
+            } else if (anni === "anziano") {
                 tariffaBiglietto = (tariffaBiglietto - sconto40).toFixed(2)
+                return tariffaBiglietto
             } else {
-                tariffaBiglietto
+                tariffaBiglietto = tariffaBiglietto
+                return tariffaBiglietto.toFixed(2);
             }
-            return tariffaBiglietto.toFixed(2);
+       
         }
 
         var prezzoDelBiglietto = prezzoCalculator(distanza, tariffa);
@@ -114,24 +117,24 @@ function formKeeper() {
             document.getElementById("codiceCP").innerHTML += ("<span class='inoculated'>" + code + "</span>")
             document.getElementById("prezzofinale").innerHTML += ("<span class='inoculated'>" + price + "</span>")
             return;
+
+
         }
 
         if (nomeControllato && numeroControllato) {
+            var biglietto = document.getElementById("toreveal")
+            biglietto.style.display = "block"
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
         }
+
+     
 
     });
 
     ilForm.addEventListener("reset", function () {
 
-        var targets = document.querySelectorAll(".inoculated")
-
-        for (var i = 0; i < targets.length; i++) {
-            var target = targets[i];
-
-            target.remove();
-        }
-
+        var biglietto = document.getElementById("toreveal")
+        biglietto.style.display = "none"
     });
 };
 
