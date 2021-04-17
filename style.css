@@ -29,13 +29,15 @@ h1{
     justify-content: center;
 }
 
-.firstpart{
-    display: flex;
-    justify-content: space-around;
-}
 
 form{
     width: 80%;
+}
+
+.inserimento1, .inserimento2, .inserimento3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label{
@@ -43,20 +45,14 @@ label{
     text-align: center;
     color:  #B91550;
     margin-bottom: 15px;
-    
 }
+
 input, select{
     text-align: center;
     border: 1px solid #B91550;
     border-radius: 4px;
 }
 
-.inserimento1, .inserimento2, .inserimento3{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 15px;
-}
 
 
 .secondpart{
@@ -101,12 +97,15 @@ button{
     text-align: center;
 }
 
+.biglietto div h4{
+    height: 60px;
+}
 #nomedelpasseggero{
     background-color: #808080;
 }
 
 .inoculated{
-    padding: 60px;
+    padding: 60px 0 ;
     text-transform: capitalize;
 }
 
@@ -135,4 +134,73 @@ button{
         transform: scale(1);
     }
     
+}
+
+
+@media screen and (min-width: 500px){
+
+    .inserimento1, .inserimento2, .inserimento3{
+        width: 100%;
+    }
+
+    label{
+        margin: 15px 0;
+    }
+
+    .biglietto div h4{
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 767px){
+
+    .biglietto div h4{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .firstpart{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .inserimento1, .inserimento2{
+        width: 50%;
+        padding: 0;
+    }
+
+    .inserimento3{
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    label{
+        margin-bottom: 15px;
+    }
+
+    .biglietto div h4{
+        font-size: 14px;
+    }
+
+   
+}
+
+@media screen and (min-width: 1080px){
+
+    .firstpart{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .inserimento1, .inserimento2, .inserimento3{
+        width: calc(100% / 3);
+        padding: 0 15px;
+    }
+    .biglietto div h4{
+        font-size: 18px;
+    }
 }

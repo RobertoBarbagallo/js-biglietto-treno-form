@@ -1,7 +1,6 @@
 
 window.addEventListener("load", function () {
     console.log("pagina caricata completamente")
-
     formKeeper();
 });
 
@@ -11,9 +10,7 @@ function formKeeper() {
     var ilBottone = document.getElementById("genera")
 
     ilBottone.addEventListener("mouseover", function () {
-
         ilBottone.style.animation = "pulse 500ms linear 1"
-
     });
 
     ilBottone.addEventListener("mouseleave", function () {
@@ -23,9 +20,7 @@ function formKeeper() {
     var ilBottoneDue = document.getElementById("annulla")
 
     ilBottoneDue.addEventListener("mouseover", function () {
-
         ilBottoneDue.style.animation = "pulse 500ms linear 1"
-
     });
 
     ilBottoneDue.addEventListener("mouseleave", function () {
@@ -81,9 +76,8 @@ function formKeeper() {
                 tariffaBiglietto = tariffaBiglietto
                 return tariffaBiglietto.toFixed(2);
             }
-       
-        }
 
+        }
         var prezzoDelBiglietto = prezzoCalculator(distanza, tariffa);
 
         console.log(prezzoCalculator(distanza, tariffa));
@@ -117,24 +111,29 @@ function formKeeper() {
             document.getElementById("codiceCP").innerHTML += ("<span class='inoculated'>" + code + "</span>")
             document.getElementById("prezzofinale").innerHTML += ("<span class='inoculated'>" + price + "</span>")
             return;
-
-
         }
-
         if (nomeControllato && numeroControllato) {
             var biglietto = document.getElementById("toreveal")
             biglietto.style.display = "block"
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
+        }else{
+            alert("Hai immesso un valore numerico al posto del nome o una parola al posto della distanza, riprova!")
         }
-
-     
-
     });
 
     ilForm.addEventListener("reset", function () {
-
         var biglietto = document.getElementById("toreveal")
         biglietto.style.display = "none"
+
+        function reset() {
+            document.getElementById("nomedelpasseggero").innerHTML = ("")
+            document.getElementById("offerta").innerHTML = ("")
+            document.getElementById("carrozza").innerHTML = ("")
+            document.getElementById("codiceCP").innerHTML = ("")
+            document.getElementById("prezzofinale").innerHTML = ("")
+            return;
+        }
+        reset()
     });
 };
 
