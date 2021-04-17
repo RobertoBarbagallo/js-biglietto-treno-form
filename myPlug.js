@@ -112,12 +112,14 @@ function formKeeper() {
             document.getElementById("prezzofinale").innerHTML += ("<span class='inoculated'>" + price + "</span>")
             return;
         }
-        if (nomeControllato && numeroControllato) {
+        if ((nomeControllato && numeroControllato) && (nomeCompleto && distanza) ) {
             var biglietto = document.getElementById("toreveal")
             biglietto.style.display = "block"
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
-        } else {
+        } else if ((!nomeControllato || !numeroControllato) && (nomeCompleto && distanza)) {
             alert("Hai immesso un valore numerico al posto del nome o una parola al posto della distanza, riprova!")
+        }else{
+            alert("Devi immettere entrambi i valoti")
         }
     });
 
