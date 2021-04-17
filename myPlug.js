@@ -116,28 +116,36 @@ function formKeeper() {
             var biglietto = document.getElementById("toreveal")
             biglietto.style.display = "block"
             inoculate(nomeCompleto, tariffa, vagone, ilTreno, prezzoDelBiglietto);
-        }else{
+        } else {
             alert("Hai immesso un valore numerico al posto del nome o una parola al posto della distanza, riprova!")
         }
     });
 
     ilForm.addEventListener("reset", function () {
+
         var biglietto = document.getElementById("toreveal")
-        biglietto.style.display = "none"
+        if (confirm("Vuoi davvero annullare tutti i tuoi inserimenti?")) {
+            biglietto.style.display = "none"
 
-        function reset() {
-            var testoInoculato = document.querySelectorAll("span");
-            console.log (testoInoculato)
-
-            for (var index = 0; index < testoInoculato.length; index++) {
-                var ilTestoDaCancellare = testoInoculato[index];
-                ilTestoDaCancellare.outerHTML = ("")
+            function reset() {
+                var testoInoculato = document.querySelectorAll("span");
+              
+                for (var index = 0; index < testoInoculato.length; index++) {
+                    var ilTestoDaCancellare = testoInoculato[index];
+                    ilTestoDaCancellare.outerHTML = ("")
+                }
+    
+                return;
             }
-         
+            reset()
+
+        }else{
             return;
         }
-        reset()
+
     });
+
+
 };
 
 
