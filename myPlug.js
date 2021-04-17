@@ -126,11 +126,14 @@ function formKeeper() {
         biglietto.style.display = "none"
 
         function reset() {
-            document.getElementById("nomedelpasseggero").innerHTML = ("")
-            document.getElementById("offerta").innerHTML = ("")
-            document.getElementById("carrozza").innerHTML = ("")
-            document.getElementById("codiceCP").innerHTML = ("")
-            document.getElementById("prezzofinale").innerHTML = ("")
+            var testoInoculato = document.querySelectorAll("span");
+            console.log (testoInoculato)
+
+            for (var index = 0; index < testoInoculato.length; index++) {
+                var ilTestoDaCancellare = testoInoculato[index];
+                ilTestoDaCancellare.outerHTML = ("")
+            }
+         
             return;
         }
         reset()
