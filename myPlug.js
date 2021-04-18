@@ -76,7 +76,6 @@ function formKeeper() {
                 tariffaBiglietto = tariffaBiglietto
                 return tariffaBiglietto.toFixed(2);
             }
-
         }
         var prezzoDelBiglietto = prezzoCalculator(distanza, tariffa);
 
@@ -105,11 +104,9 @@ function formKeeper() {
         var numeroControllato = controlloNumero(distanza)
 
         function inoculate(name, offer, wagon, code, price) {
-            document.getElementById("nomedelpasseggero").innerHTML += ("<span class='inoculated'>" + name + "</span>")
-            document.getElementById("offerta").innerHTML += ("<span class='inoculated'>" + offer + "</span>")
-            document.getElementById("carrozza").innerHTML += ("<span class='inoculated'>" + wagon + "</span>")
-            document.getElementById("codiceCP").innerHTML += ("<span class='inoculated'>" + code + "</span>")
-            document.getElementById("prezzofinale").innerHTML += ("<span class='inoculated'>" + price + "</span>")
+
+            document.getElementById("target").innerHTML += ("<tr>" + "<td class='inoculated black'>" + name + "</td>" +
+                "<td class='inoculated'>" + offer + "</td>" + "<td class='inoculated'>" + wagon + "</td>" + "<td class='inoculated'>" + code + "</td>" + "<td class='inoculated'>" + price + "</td>" + "</tr>")
             return;
         }
         if ((nomeControllato && numeroControllato) && (nomeCompleto && distanza)) {
@@ -119,25 +116,27 @@ function formKeeper() {
         } else if ((!nomeControllato || !numeroControllato) && (nomeCompleto && distanza)) {
             alert("Hai immesso un valore numerico al posto del nome o una parola al posto della distanza, riprova!")
         } else {
-            alert("Devi immettere entrambi i valoti")
+            alert("Devi immettere entrambi i valori")
         }
     });
 
     ilForm.addEventListener("reset", function () {
 
-        var biglietto = document.getElementById("toreveal")
-        if (confirm("Vuoi davvero annullare tutti i tuoi inserimenti?")) {
-            biglietto.style.display = "none"
+        if (confirm("Vuoi davvero annullare il tuo ultimo inserimento?")) {
 
             function reset() {
-                var testoInoculato = document.querySelectorAll("span");
+                var biglietto = document.getElementById("toreveal")
+                var ultimaRiga = document.querySelector("tbody > tr:last-child")
+                var tutteLeRighe = document.querySelectorAll("tbody > tr")
 
-                for (var index = 0; index < testoInoculato.length; index++) {
-                    var ilTestoDaCancellare = testoInoculato[index];
-                    ilTestoDaCancellare.outerHTML = ("")
+                if (tutteLeRighe.length < 2) {
+                    ultimaRiga.outerHTML = ("")
+                    biglietto.style.display = ("none")
+                } else {
+                    ultimaRiga.outerHTML = ("")
                 }
 
-                return;
+                return
             }
             reset()
 
@@ -146,8 +145,6 @@ function formKeeper() {
         }
 
     });
-
-
 };
 
 
